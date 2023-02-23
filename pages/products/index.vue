@@ -1,8 +1,9 @@
 <!-- /products/hello -->
 
 <template>
-  <h2>Hello</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid autem blanditiis, deserunt dolorem doloribus eius, facere iste, libero molestiae nobis odio omnis provident quam quod ut voluptate! Quasi, tempore!</p>
+  <div>
+    <p>Products</p>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,10 @@
 
 /******** Hooks **********/
 
+
+definePageMeta({
+  layout: 'products',
+})
 
 /******** Functions **********/
 

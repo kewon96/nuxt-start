@@ -1,8 +1,10 @@
 <!-- /about -->
 
 <template>
-  <h2>About</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid autem blanditiis, deserunt dolorem doloribus eius, facere iste, libero molestiae nobis odio omnis provident quam quod ut voluptate! Quasi, tempore!</p>
+  <div>
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid autem blanditiis, deserunt dolorem doloribus eius, facere iste, libero molestiae nobis odio omnis provident quam quod ut voluptate! Quasi, tempore!</p>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -12,6 +14,9 @@
 
 /******** Instance **********/
 
+definePageMeta({
+  layout: 'about',
+})
 
 /******** Reactive Instance **********/
 

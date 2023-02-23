@@ -14,11 +14,15 @@
 /******** Instance **********/
 
 const { id } = useRoute().params
+definePageMeta({
+  layout: 'products',
+})
 
 /******** Reactive Instance **********/
 
 
 /******** Hooks **********/
+
 
 
 /******** Functions **********/
