@@ -9,6 +9,14 @@
 
 <script setup lang="ts">
 
+/* useAsyncData() and $fetch() are auto-imported */
+
+
+
+const count = ref(1)
+const double = computed(() => count.value * 2)
+
+
 /******** Type & Interface **********/
 
 
