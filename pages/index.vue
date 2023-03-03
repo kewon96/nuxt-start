@@ -5,6 +5,8 @@
     <h2>Home</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid autem blanditiis, deserunt dolorem doloribus eius, facere iste, libero molestiae nobis odio omnis provident quam quod ut voluptate! Quasi, tempore!</p>
     x: {{x}} y: {{y}}
+
+    <Input v-model="x" />
   </div>
 </template>
 
