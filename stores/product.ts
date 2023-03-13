@@ -16,20 +16,22 @@ export const useProduct = defineStore('product', {
                 this.products = data.value!
             })
         },
-        fetchProduct(id: string) {
-            nextTick(async () => {
+        async fetchProduct(id: string) {
+            const forthFetch = (data: Ref<Product | null>) => {
+                if(!data.value) {
+                    this.product = {}
+                    throw createError({ statusCode: 404, statusMessage: 'Product is not Found', fatal: true })
+                }
+
+                this.product = data.value!
+            }
+
+            await nextTick(async () => {
                 const { data } = await useFetch<Product>(`${URI}${id}`);
                 forthFetch(data)
             })
 
-            const forthFetch = (data: Ref<Product | null>) => {
-                // if(!data.value) {
-                //     this.product = {}
-                //     throw createError({ statusCode: 404, statusMessage: 'Product is not Found', fatal: true })
-                // }
 
-                this.product = data.value!
-            }
         }
     }
 })

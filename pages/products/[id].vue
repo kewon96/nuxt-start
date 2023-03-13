@@ -21,12 +21,12 @@ const { id } = useRoute().params as { id: string }
 
 /******** Hooks **********/
 
-onMounted(() => {
-  store.fetchProduct(id)
+onMounted(async () => {
+  await store.fetchProduct(id)
 
-  if(Object.keys(product.value).length === 0) {
-    throw createError({ statusCode: 404, statusMessage: 'Product is not Found', fatal: true })
-  }
+  // if(Object.keys(product.value).length === 0) {
+  //   throw createError({ statusCode: 404, statusMessage: 'Product is not Found', fatal: true })
+  // }
 })
 
 definePageMeta({
