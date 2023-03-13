@@ -13,17 +13,18 @@
 
 /******** Instance **********/
 
-const { id } = useRoute().params
-const uri = `https://fakestoreapi.com/products/${id}`
-
-// fetch the product
-const { data: product } = await useFetch(uri)
-console.log(product)
+const store = useProduct();
+const { product } = storeToRefs(store);
+const { id } = useRoute().params as { id: string }
 
 /******** Reactive Instance **********/
 
 
 /******** Hooks **********/
+
+onMounted(() => {
+  store.fetchProduct(id)
+})
 
 definePageMeta({
   layout: 'products',
