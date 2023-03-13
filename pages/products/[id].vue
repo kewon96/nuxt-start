@@ -1,8 +1,7 @@
 <!-- /products/:id -->
 <template>
   <div>
-    <p>Product details for {{ id }} / {{ product.title }}</p>
-    <p>{{ product.price }}</p>
+    <ProductDetails :product="product" />
   </div>
 </template>
 
