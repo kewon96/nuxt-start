@@ -1,17 +1,3 @@
-// type Product = {
-//     category: string
-//     description: string
-//     id: number
-//     image: string
-//     price: number
-//     rating: Rate
-//     title: string
-// } | {}
-//
-// type Rate = {
-//     rate: number,
-//     count: number
-// }
 
 const URI = `https://fakestoreapi.com/products/`;
 
@@ -33,8 +19,17 @@ export const useProduct = defineStore('product', {
         fetchProduct(id: string) {
             nextTick(async () => {
                 const { data } = await useFetch<Product>(`${URI}${id}`);
-                this.product = data.value!
+                forthFetch(data)
             })
+
+            const forthFetch = (data: Ref<Product | null>) => {
+                // if(!data.value) {
+                //     this.product = {}
+                //     throw createError({ statusCode: 404, statusMessage: 'Product is not Found', fatal: true })
+                // }
+
+                this.product = data.value!
+            }
         }
     }
 })
